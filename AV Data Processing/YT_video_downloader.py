@@ -5,6 +5,8 @@ from multiprocessing.pool import ThreadPool
 from yt_dlp import YoutubeDL
 import ffmpeg
 
+# COMMAND = python YT_video_downloader.py videos/ csv_file_name.csv
+# csv file format must be 'yt_video_id, file_name, start_time (in seconds), end_time (in seconds)'
 
 class VidInfo:
     def __init__(self, yt_id, file_name, start_time, end_time, outdir):
@@ -50,7 +52,6 @@ def download(vidinfo):
 
     return '{}, DONE!'.format(vidinfo.yt_id)
 
-# COMMAND = python my_downloader.py folder_name/ csv_file_name.csv
 
 if __name__ == '__main__':
 
